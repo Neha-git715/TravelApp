@@ -1,0 +1,49 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="bg-gray-100">
+    <ActionBar title="Travel Memories" class="bg-blue-600 text-white" flat="true" />
+    
+    <ScrollView>
+        <StackLayout class="p-4">
+            <!-- Author Name -->
+            <Label text="Neha Gade" class="text-xl font-bold text-center mb-4 text-blue-600" />
+            
+            <!-- Memory Card -->
+            <GridLayout rows="auto, auto" columns="*" class="bg-white rounded-3xl shadow-lg mb-4 overflow-hidden">
+                <!-- Image -->
+                <Image src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a" stretch="aspectFill" height="300" row="0" />
+                
+                <!-- Content Container -->
+                <StackLayout row="1" class="p-6">
+                    <!-- Location and Date -->
+                    <GridLayout columns="*, auto" class="mb-2">
+                        <Label text="Paris, France" class="text-2xl font-bold text-gray-800" col="0" />
+                        <Label text="April 06,2025" class="text-gray-500" col="1" verticalAlignment="center" />
+                    </GridLayout>
+                    
+                    <!-- Travel Note -->
+                    <Label text="I feel (Eiffel) towery around you :))...
+                    
+Explored the magnificent Eiffel Tower at sunset. The golden light painted the city in magical hues, creating an unforgettable moment in the heart of Paris." 
+                           class="text-gray-600 mb-4" textWrap="true" />
+                    
+                    <!-- Action Buttons -->
+                    <GridLayout columns="auto, *, auto" class="mt-2">
+                        <!-- Like Button -->
+                        <Label text="{{ isLiked ? '❤️' : '🤍' }}" 
+                               class="text-2xl" 
+                               tap="{{ onLikeTap }}"
+                               col="0" />
+                               
+                        <!-- Spacer -->
+                        <Label text="" col="1" />
+                        
+                        <!-- Share Button -->
+                        <Label text="📤" 
+                               class="text-2xl" 
+                               tap="{{ onShareTap }}"
+                               col="2" />
+                    </GridLayout>
+                </StackLayout>
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>
+</Page>
